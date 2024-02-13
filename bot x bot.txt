@@ -1,0 +1,635 @@
+import os
+import time
+import random
+import pyautogui
+from random import randint
+'''#----------------------------AJUDA----------------------------------'''
+#OBTER COR DE COORDENADA DESEJADA
+x, y = 1808, 155
+cor = pyautogui.pixel(x, y)
+
+t, q = (1887, 692)
+cortq = pyautogui.pixel(t, q)
+
+stickr, stickg, stickb = pyautogui.pixel(1908, 135)
+print ('stick')
+print (stickr, stickg, stickb)
+
+print(f"A cor RGB na coordenada ({x}, {y}) é: {cor}")
+print(f"A cor RGB na coordenada ({t}, {q}) é: {cortq}")
+
+print ('para divinação a cor é')
+diva, divb = 1888, 728
+cor = pyautogui.pixel(diva, divb)
+print(f"A cor RGB na coordenada para divinação ({diva}, {divb}) é: {cor}")
+'''#----------------------------SMITHING----------------------------------'''
+
+smithing = 0 #MUDAR PARA 1 PARA FAZER BARRA
+while smithing == 1:
+    while pyautogui.pixel(1869, 163) == (27, 24, 22):
+        if pyautogui.pixel(1904, 724) == (0, 0, 1):
+            pyautogui.click(randint(1417, 1464), randint(436, 470))
+            time.sleep(randint(1, 2))
+            if pyautogui.pixel(1096, 760) == (64, 220, 69):
+                pyautogui.click(randint(1055, 1155), randint(748, 762))
+                time.sleep(randint(1, 2))
+                pyautogui.click(randint(1556, 1810), randint(743, 758))
+    else:
+        smithing=0
+
+'''#-------------------------MATA ARANHA-------------------------------'''
+spiders= 0 #MUDAR PARA 1 PARA CAÇAR ARANHA
+caminho_do_diretorio = r'D:\AVA\TESTEcanvas'
+nomes_de_arquivos = ['SP1.png', 'SP2.png', 'SP3.png', 'SP4.png', 'SP5.png']
+while spiders==1:
+    for nome_arquivo in nomes_de_arquivos:
+        try: #merda de try
+            caminho_da_imagem = os.path.join(caminho_do_diretorio, nome_arquivo)
+            x, y, largura, altura = pyautogui.locateOnScreen(caminho_da_imagem, confidence=0.55)
+            coordenada_x = random.randint(x, x + largura - 1)
+            coordenada_y = random.randint(y, y + altura - 1)
+            pyautogui.click(coordenada_x, coordenada_y)
+            tempo_de_espera = random.uniform(10, 14)
+            time.sleep(tempo_de_espera)
+        except pyautogui.ImageNotFoundException:
+            pass #só pq o try pede except... não serve para NADA
+        except Exception as e:
+            pass #só pq o try pede except... não serve para NADA
+'''#-------------------------LOW ALCH-------------------------------'''
+lowalch = 0
+while lowalch == 1:
+    x = randint(1828, 1840)
+    y = randint(936, 952)
+    a = randint(1, 5)
+    b = randint(1, 5)
+    sleep_time_1 = randint(1500, 3000)
+
+    print(f"Tempo de clique 1: {sleep_time_1} milissegundos")
+
+    pyautogui.moveTo(x, y)
+    time.sleep(sleep_time_1 / 1000)
+    pyautogui.click()
+
+    x = randint(1875, 1896)
+    y = randint(718, 733)
+    a = randint(1, 5)
+    b = randint(1, 5)
+
+    # Introduzindo a raridade de 1 em 100 para um clique entre 3 e 5 segundos
+    if randint(1, 20) == 1:
+        sleep_time_2 = randint(3000, 5000)
+    else:
+        sleep_time_2 = randint(1500, 3000)
+
+    print(f"Tempo de clique 2: {sleep_time_2} milissegundos")
+
+    pyautogui.moveTo(x, y)
+    time.sleep(sleep_time_2 / 1000)
+    pyautogui.click()
+'''#-------------------------BANDITS-------------------------------'''
+bandits = 0 #MUDAR PARA 1 PARA MATAR BANDITS
+while bandits == 1:
+    while pyautogui.pixel(1808, 155) == (199, 185, 164):
+        tempo_de_espera = randint (15, 30)
+        time.sleep(tempo_de_espera)
+        pyautogui.moveTo((randint(1072, 1144)), (randint(386, 402)))
+        time.sleep(randint(1,3))
+        pyautogui.click()
+        time.sleep(randint(1, 3))
+        pyautogui.moveTo(10,10)
+        time.sleep(randint(1,3))
+        if pyautogui.pixel(1885, 655) != (62, 53, 41):
+            print ("ta na tela")
+            pyautogui.moveTo(randint(1786, 1802), randint(573, 590))
+            time.sleep(randint(1,2))
+            pyautogui.click()
+            time.sleep(randint(1,2))
+            pyautogui.moveTo(randint(1876, 1890), randint(648, 660))
+            time.sleep(randint(1,3))
+            pyautogui.click()
+            time.sleep(randint(2, 4))
+            if pyautogui.pixel(1887, 692) != (62, 53, 41):
+                print("ta na tela")
+                pyautogui.moveTo(randint(1786, 1802), randint(573, 590))
+                time.sleep(randint(1, 2))
+                pyautogui.click()
+                time.sleep(randint(1, 2))
+                pyautogui.moveTo(randint(1878, 1894), randint(683, 698))
+                time.sleep(randint(1, 3))
+                pyautogui.click()
+                time.sleep(randint(2, 4))
+        else:
+            print ("não ta na tela")
+
+    else:
+        bandits=0
+'''#-------------------------STICK LUMB BANK-------------------------------'''
+stick=0
+while stick ==1:
+    acaboua, acaboub, acabouc = pyautogui.pixel(1890, 726)
+    while (pyautogui.pixel(1908, 135) == (248, 5, 5)):
+        x , y = randint(1426, 1454), randint(478, 499)
+        pyautogui.click(x,y)
+        time.sleep(randint(1,2))
+        pyautogui.moveTo(randint(1726, 1748), randint(716, 738))
+        time.sleep(randint(1,2))
+        pyautogui.click()
+        time.sleep(randint(1,2))
+        pyautogui.moveTo(randint(1742, 1762), randint(503, 519))
+        time.sleep(1)
+        pyautogui.click()
+        pyautogui.moveTo(randint(1430, 1670), randint(666, 681))
+        time.sleep(randint(1,2))
+        pyautogui.click()
+        testeacaboua, testeacaboub, testeacabouc = pyautogui.pixel(1890, 726)
+        if (acaboua, acaboub, acabouc) != (testeacaboua, testeacaboub, testeacabouc):
+            stick = 0
+        time.sleep(randint(98, 101))
+    else:
+        stick = 0
+'''#-------------------------DIVINATION CLICANDO EM COORDENADA ESQUISITA E FUNCIONANDO MUITO MAL-------------------------------'''
+divination=1
+tanatela = 0
+while (divination==1):
+    try: #MERDA DE TRY
+        if pyautogui.locateOnScreen(r'D:\AVA\TESTEcanvas\botaodiv.png', confidence=0.7):
+            tanatela = 1
+            while tanatela == 1:
+                buracos = ['buraco1.PNG', 'buraco2.PNG', 'buraco3.PNG', 'buraco4.PNG', 'buraco5.PNG', 'buraco6.PNG', 'buraco7.PNG', 'buraco8.PNG', 'buraco9.PNG', 'buraco11.PNG']
+                for buraco_imagem in buracos:
+                    try: #ERA PARA SER UM IF MAS NÃO DEIXA COM LOCATEONSCREEN
+                        posicao = pyautogui.locateOnScreen(buraco_imagem, confidence=0.70)
+                        if posicao:
+                            centro_x, centro_y = pyautogui.center(posicao)
+                            pyautogui.moveTo(centro_x + randint(-10, 10), centro_y + randint(-10,10)) #PARECE NÃO SERVIR DE NADA, TA MOVENDO 3,4 VEZES PARECE QUE PARA AS MESMAS COORDENADAS E CLICANDO EM LUGAR ALEATORIO
+                            if pyautogui.locateOnScreen('convert.PNG', confidence =0.8) and (tanatela==1):
+                                time.sleep(1)
+                                pyautogui.click() # ASS VEZES CLICA EM LUGAR ALERATORIO DO LADO DE <-- DA TELA O.O
+                                tanatela = 0
+                                time.sleep(4)
+                                pyautogui.moveTo(10, 10) #POR ALGUM MOTIVO PARECE ESTAR CLICANDO
+                                time.sleep(1)
+                                #while pyautogui.locateOnScreen('xpsubindo.PNG', confidence=0.9):
+                                while (pyautogui.pixel(1888, 728) != (62, 53, 41)):
+                                    time.sleep(random.randint(2, 4))
+                                else:
+                                    time.sleep(0) #NEM PRECISAVA DESSA MERDA
+                            else:
+                                time.sleep(0) #NEM PRECISAVA DESSA MERDA
+                            break
+                    except pyautogui.ImageNotFoundException:
+                        aa=1 #except FDP
+                else:
+                    time.sleep(1)
+        else:
+            aa=1 #NEM PRECISAVA DESSA MERDA
+    except pyautogui.ImageNotFoundException: #EXCEPT FDP
+        wisps = ['div1.PNG', 'div2.PNG', 'div3.PNG', 'div4.PNG']
+        for div_imagem in wisps:
+            try: #TRY FDP
+                posicao = pyautogui.locateOnScreen(div_imagem, confidence=0.7)
+                if posicao:
+                    centro_x, centro_y = pyautogui.center(posicao)
+                    deslocamento_x = random.randint(-5, 5)
+                    deslocamento_y = random.randint(-5, 5)
+                    pyautogui.moveTo(centro_x + deslocamento_x, centro_y + deslocamento_y)
+                    pyautogui.click() #PARECE ESTAR CLICANDO SEMPRE NO MEIO, MESMO SE AUMETAR PARA -20, +20
+                    time.sleep(4)
+                    pyautogui.moveTo(10, 10) #PARECE ESTAR CLICANDO NO LADO DE <--- DA TELA
+                    time.sleep(1)
+                    while ((pyautogui.locateOnScreen('xpsubindo.png', confidence = 0.8)) and (pyautogui.locateOnScreen('pressenter.PNG', confidence =0.7))):
+                        time.sleep(random.randint(2, 4))
+            except pyautogui.ImageNotFoundException:
+                aa=1 #except FDP
+
+    # Adicione um pequeno atraso entre as iterações para evitar consumo excessivo de recursos
+    time.sleep(1)
+
+
+
+
+
+
+
+
+'''#-------------------------PROGRAMAÇÃO ANTIGA QUE PYTHON ACEITAVA SÓ IF/ELSE E ERA PERFEITO PQ NEM ELSE PRECISAVA-------------------------------'''
+
+import pyautogui
+import time
+from random import randint
+from datetime import datetime #NÂO TO USANDO
+from selenium import webdriver #NÂO TO USANDO
+from selenium.webdriver.chrome.options import Options #NÂO TO USANDO
+
+time.sleep(4)
+# Inicio aleatoriedade da pedra e detecção de cores
+posicao = 1
+parartudo = 0
+contacarga = 0
+detectd1 = 0
+detectd2 = 0
+detectd3 = 0
+detectd4 = 0
+contabot = 1
+while (parartudo != 1):
+    sc = pyautogui.screenshot(region=(0, 0, 1920, 1080)) #"DEMORADO POREM EFICIENTE PARA ITEM QUE NÃO SE MECHE E MUDA DE COR NO PIXEL"
+    sc.save('scream.png')
+    width, height = sc.size
+    time.sleep(randint(1, 3))
+    redsinal, greensinal, bluesinal = sc.getpixel((1210, 780))
+    print(redsinal, greensinal, bluesinal)
+    rsignalbag, gsignalbag, bsignalbag = sc.getpixel((1864, 915))
+    print(rsignalbag, gsignalbag, bsignalbag)
+    redbar, greenbar, bluebar = sc.getpixel((944, 725))
+    # print(redbar, greenbar, bluebar)
+    if ((redsinal == 90 and greensinal == 150 and bluesinal == 25) or (
+            rsignalbag == 0 and gsignalbag == 0 and bsignalbag == 1)):
+        if (posicao == 1):
+            sc = pyautogui.screenshot(region=(0, 0, 1920, 1080))
+            sc.save('scream.png')
+            width, height = sc.size
+            time.sleep(1)
+            redp2, greenp2, bluep2 = sc.getpixel((1613, 373))  # define o pixel da pedra 2 com o char na 1
+            redp3, greenp3, bluep3 = sc.getpixel((1596, 319))  # define o pixel da pedra 3 com o char na 1
+            # print (redp2, greenp2, bluep2)
+            # print(redp3, greenp3, bluep3)
+            if (detectd1 == 0):
+                dredp2, dgreenp2, dbluep2 = sc.getpixel((1613, 373))
+                dredp3, dgreenp3, dbluep3 = sc.getpixel((1596, 319))
+                detectd1 = 1
+                # print(dredp3, dgreenp3, dbluep3)
+            if (redp2 != dredp2 and greenp2 != dgreenp2 and bluep2 != dbluep2):
+                clickp2d1x = randint(1586, 1610)
+                clickp2d1y = randint(379, 400)
+                pyautogui.moveTo(clickp2d1x, clickp2d1y)
+                time.sleep(randint(1, 8))
+                pyautogui.click(clickp2d1x, clickp2d1y)
+                detectd1 = 0
+                time.sleep(10)
+                posicao = 2
+                contacarga = contacarga + 1
+                print(contacarga)
+                if (contacarga > 7):
+                    contacarga = 0
+                    clickcontax = randint(1216, 1229)
+                    clickcontay = randint(915, 925)
+                    pyautogui.moveTo(clickcontax, clickcontay)
+                    time.sleep(randint(1, 4))
+                    pyautogui.rightClick(clickcontax, clickcontay)
+                    time.sleep(randint(2, 4))
+                    movenecx = randint(1078, 1181)
+                    movenecy = randint(963, 969)
+                    time.sleep(1)
+                    pyautogui.moveTo(movenecx, movenecy)
+                    time.sleep(randint(1, 3))
+                    pyautogui.click(movenecx, movenecy)
+                    time.sleep(randint(2, 4))
+            elif (redp3 != dredp3 and greenp3 != dgreenp3 and bluep3 != dbluep3):
+                clickp3d1x = randint(1584, 1608)
+                clickp3d1y = randint(322, 339)
+                pyautogui.moveTo(clickp3d1x, clickp3d1y)
+                time.sleep(randint(1, 8))
+                pyautogui.click(clickp3d1x, clickp3d1y)
+                detectd1 = 0
+                time.sleep(10)
+                posicao = 3
+                if (contabot == 1): #PROCURAR UMA SOLUÇÃO PARA NÃO REESCREVER ESSA PORRA 200X
+                    sc = pyautogui.screenshot(region=(0, 0, 1920, 1080))
+                    sc.save('scream.png')
+                    width, height = sc.size
+                    time.sleep(1)
+                    redbar, greenbar, bluebar = sc.getpixel((944, 725))
+                    print(redbar, greenbar, bluebar)
+                    if (redbar == 0 and greenbar == 0 and bluebar == 1):
+                        xcaveira = randint(458, 504)
+                        ycaveira = randint(440, 472)
+                        pyautogui.moveTo(xcaveira, ycaveira)
+                        time.sleep(randint(1, 2))
+                        pyautogui.click(xcaveira, ycaveira)
+                        time.sleep(randint(1, 3))
+                        xdeposita = randint(99, 192)
+                        ydeposita = randint(742, 755)
+                        pyautogui.moveTo((xdeposita, ydeposita))
+                        time.sleep(1)
+                        pyautogui.click(xdeposita, ydeposita)
+                        time.sleep(1)
+                        xsmith = randint(600, 850)
+                        ysmith = randint(738, 752)
+                        pyautogui.moveTo(xsmith, ysmith)
+                        time.sleep(1)
+                        pyautogui.click(xsmith, ysmith)
+        elif (posicao == 2):
+            sc = pyautogui.screenshot(region=(0, 0, 1920, 1080))
+            sc.save('scream.png')
+            width, height = sc.size
+            time.sleep(randint(1, 3))
+            redp1d2, greenp1d2, bluep1d2 = sc.getpixel((1399, 701))
+            redp3d2, greenp3d2, bluep3d2 = sc.getpixel((1493, 482))
+            redp4d2, greenp4d2, bluep4d2 = sc.getpixel((1435, 342))
+            # print(redp1d2, greenp1d2, bluep1d2)
+            # print(redp3d2, greenp3d2, bluep3d2)
+            # print(redp4d2, greenp4d2, bluep4d2)
+            if (detectd2 == 0):
+                dredp1d2, dgreenp1d2, dbluep1d2 = sc.getpixel((1399, 701))
+                dredp3d2, dgreenp3d2, dbluep3d2 = sc.getpixel((1493, 482))
+                dredp4d2, dgreenp4d2, dbluep4d2 = sc.getpixel((1435, 342))
+                detectd2 = 1
+            if (redp1d2 != dredp1d2 and greenp1d2 != dgreenp1d2 and bluep1d2 != dbluep1d2):
+                clickp1d2x = randint(1372, 1404)
+                clickp1d2y = randint(683, 707)
+                pyautogui.moveTo(clickp1d2x, clickp1d2y)
+                time.sleep(randint(1, 8))
+                pyautogui.click(clickp1d2x, clickp1d2y)
+                detectd2 = 0
+                time.sleep(2)
+                pyautogui.moveTo(1416, 633)  # tirando o mouse de cima do sinal
+                time.sleep(8)
+                posicao = 1
+                if (contabot == 1):
+                    sc = pyautogui.screenshot(region=(0, 0, 1920, 1080))
+                    sc.save('scream.png')
+                    width, height = sc.size
+                    time.sleep(1)
+                    redbar, greenbar, bluebar = sc.getpixel((944, 725))
+                    if (redbar == 0 and greenbar == 0 and bluebar == 1):
+                        xcaveira = randint(458, 504)
+                        ycaveira = randint(440, 472)
+                        pyautogui.moveTo(xcaveira, ycaveira)
+                        time.sleep(randint(1, 2))
+                        pyautogui.click(xcaveira, ycaveira)
+                        time.sleep(randint(1, 3))
+                        xdeposita = randint(99, 192)
+                        ydeposita = randint(742, 755)
+                        pyautogui.moveTo((xdeposita, ydeposita))
+                        time.sleep(1)
+                        pyautogui.click(xdeposita, ydeposita)
+                        time.sleep(1)
+                        xsmith = randint(600, 850)
+                        ysmith = randint(738, 752)
+                        pyautogui.moveTo(xsmith, ysmith)
+                        time.sleep(1)
+                        pyautogui.click(xsmith, ysmith)
+            elif (redp3d2 != dredp3d2 and greenp3d2 != dgreenp3d2 and bluep3d2 != dbluep3d2):
+                clickp3d2x = randint(1480, 1501)
+                clickp3d2y = randint(478, 498)
+                pyautogui.moveTo(clickp3d2x, clickp3d2y)
+                time.sleep(randint(1, 8))
+                pyautogui.click(clickp3d2x, clickp3d2y)
+                detectd2 = 0
+                time.sleep(10)
+                posicao = 3
+                if (contabot == 1):
+                    sc = pyautogui.screenshot(region=(0, 0, 1920, 1080))
+                    sc.save('scream.png')
+                    width, height = sc.size
+                    time.sleep(1)
+                    redbar, greenbar, bluebar = sc.getpixel((944, 725))
+                    if (redbar == 0 and greenbar == 0 and bluebar == 1):
+                        xcaveira = randint(458, 504)
+                        ycaveira = randint(440, 472)
+                        pyautogui.moveTo(xcaveira, ycaveira)
+                        time.sleep(randint(1, 2))
+                        pyautogui.click(xcaveira, ycaveira)
+                        time.sleep(randint(1, 3))
+                        xdeposita = randint(99, 192)
+                        ydeposita = randint(742, 755)
+                        pyautogui.moveTo((xdeposita, ydeposita))
+                        time.sleep(1)
+                        pyautogui.click(xdeposita, ydeposita)
+                        time.sleep(1)
+                        xsmith = randint(600, 850)
+                        ysmith = randint(738, 752)
+                        pyautogui.moveTo(xsmith, ysmith)
+                        time.sleep(1)
+                        pyautogui.click(xsmith, ysmith)
+            elif (redp4d2 != dredp4d2 and greenp4d2 != dgreenp4d2 and bluep4d2 != dbluep4d2):
+                clickp4d2x = randint(1404, 1432)
+                clickp4d2y = randint(333, 361)
+                pyautogui.moveTo(clickp4d2x, clickp4d2y)
+                time.sleep(randint(1, 8))
+                pyautogui.click(clickp4d2x, clickp4d2y)
+                detectd2 = 0
+                time.sleep(10)
+                posicao = 4
+                if (contabot == 1):
+                    sc = pyautogui.screenshot(region=(0, 0, 1920, 1080))
+                    sc.save('scream.png')
+                    width, height = sc.size
+                    time.sleep(1)
+                    redbar, greenbar, bluebar = sc.getpixel((944, 725))
+                    if (redbar == 0 and greenbar == 0 and bluebar == 1):
+                        xcaveira = randint(458, 504)
+                        ycaveira = randint(440, 472)
+                        pyautogui.moveTo(xcaveira, ycaveira)
+                        time.sleep(randint(1, 2))
+                        pyautogui.click(xcaveira, ycaveira)
+                        time.sleep(randint(1, 3))
+                        xdeposita = randint(99, 192)
+                        ydeposita = randint(742, 755)
+                        pyautogui.moveTo((xdeposita, ydeposita))
+                        time.sleep(1)
+                        pyautogui.click(xdeposita, ydeposita)
+                        time.sleep(1)
+                        xsmith = randint(600, 850)
+                        ysmith = randint(738, 752)
+                        pyautogui.moveTo(xsmith, ysmith)
+                        time.sleep(1)
+                        pyautogui.click(xsmith, ysmith)
+        elif (posicao == 3):
+            sc = pyautogui.screenshot(region=(0, 0, 1920, 1080))
+            sc.save('scream.png')
+            width, height = sc.size
+            time.sleep(randint(1, 3))
+            redp1d3, greenp1d3, bluep1d3 = sc.getpixel((1395, 733))
+            redp2d3, greenp2d3, bluep2d3 = sc.getpixel((1505, 590))
+            redp4d3, greenp4d3, bluep4d3 = sc.getpixel((1442, 400))
+            # print(redp1d3, greenp1d3, bluep1d3)
+            # print(redp2d3, greenp2d3, bluep2d3)
+            # print(redp4d3, greenp4d3, bluep4d3)
+            if (detectd3 == 0):
+                dredp1d3, dgreenp1d3, dbluep1d3 = sc.getpixel((1395, 733))
+                dredp2d3, dgreenp2d3, dbluep2d3 = sc.getpixel((1505, 590))
+                dredp4d3, dgreenp4d3, dbluep4d3 = sc.getpixel((1442, 400))
+                detectd3 = 1
+            if (redp1d3 != dredp1d3 and greenp1d3 != dgreenp1d3 and bluep1d3 != dbluep1d3):
+                clickp1d3x = randint(1371, 1399)
+                clickp1d3y = randint(731, 760)
+                pyautogui.moveTo(clickp1d3x, clickp1d3y)
+                time.sleep(randint(1, 8))
+                pyautogui.click(clickp1d3x, clickp1d3y)
+                detectd3 = 0
+                time.sleep(2)
+                pyautogui.moveTo(1416, 633)  # tirando o mouse de cima do sinal
+                time.sleep(8)
+                posicao = 1
+                if (contabot == 1):
+                    sc = pyautogui.screenshot(region=(0, 0, 1920, 1080))
+                    sc.save('scream.png')
+                    width, height = sc.size
+                    time.sleep(1)
+                    redbar, greenbar, bluebar = sc.getpixel((944, 725))
+                    if (redbar == 0 and greenbar == 0 and bluebar == 1):
+                        xcaveira = randint(458, 504)
+                        ycaveira = randint(440, 472)
+                        pyautogui.moveTo(xcaveira, ycaveira)
+                        time.sleep(randint(1, 2))
+                        pyautogui.click(xcaveira, ycaveira)
+                        time.sleep(randint(1, 3))
+                        xdeposita = randint(99, 192)
+                        ydeposita = randint(742, 755)
+                        pyautogui.moveTo((xdeposita, ydeposita))
+                        time.sleep(1)
+                        pyautogui.click(xdeposita, ydeposita)
+                        time.sleep(1)
+                        xsmith = randint(600, 850)
+                        ysmith = randint(738, 752)
+                        pyautogui.moveTo(xsmith, ysmith)
+                        time.sleep(1)
+                        pyautogui.click(xsmith, ysmith)
+            elif (redp2d3 != dredp2d3 and greenp2d3 != dgreenp2d3 and bluep2d3 != dbluep2d3):
+                clickp2d3x = randint(1476, 1505)
+                clickp2d3y = randint(580, 606)
+                pyautogui.moveTo(clickp2d3x, clickp2d3y)
+                time.sleep(randint(1, 8))
+                pyautogui.click(clickp2d3x, clickp2d3y)
+                detectd3 = 0
+                time.sleep(10)
+                posicao = 2
+                if (contabot == 1):
+                    sc = pyautogui.screenshot(region=(0, 0, 1920, 1080))
+                    sc.save('scream.png')
+                    width, height = sc.size
+                    time.sleep(1)
+                    redbar, greenbar, bluebar = sc.getpixel((944, 725))
+                    if (redbar == 0 and greenbar == 0 and bluebar == 1):
+                        xcaveira = randint(458, 504)
+                        ycaveira = randint(440, 472)
+                        pyautogui.moveTo(xcaveira, ycaveira)
+                        time.sleep(randint(1, 2))
+                        pyautogui.click(xcaveira, ycaveira)
+                        time.sleep(randint(1, 3))
+                        xdeposita = randint(99, 192)
+                        ydeposita = randint(742, 755)
+                        pyautogui.moveTo((xdeposita, ydeposita))
+                        time.sleep(1)
+                        pyautogui.click(xdeposita, ydeposita)
+                        time.sleep(1)
+                        xsmith = randint(600, 850)
+                        ysmith = randint(738, 752)
+                        pyautogui.moveTo(xsmith, ysmith)
+                        time.sleep(1)
+                        pyautogui.click(xsmith, ysmith)
+            elif (redp4d3 != dredp4d3 and greenp4d3 != dgreenp4d3 and bluep4d3 != dbluep4d3):
+                clickp4d3x = randint(1403, 1430)
+                clickp4d3y = randint(374, 414)
+                pyautogui.moveTo(clickp4d3x, clickp4d3y)
+                time.sleep(randint(1, 8))
+                pyautogui.click(clickp4d3x, clickp4d3y)
+                detectd3 = 0
+                time.sleep(10)
+                posicao = 4
+                if (contabot == 1):
+                    sc = pyautogui.screenshot(region=(0, 0, 1920, 1080))
+                    sc.save('scream.png')
+                    width, height = sc.size
+                    time.sleep(1)
+                    redbar, greenbar, bluebar = sc.getpixel((944, 725))
+                    if (redbar == 0 and greenbar == 0 and bluebar == 1):
+                        xcaveira = randint(458, 504)
+                        ycaveira = randint(440, 472)
+                        pyautogui.moveTo(xcaveira, ycaveira)
+                        time.sleep(randint(1, 2))
+                        pyautogui.click(xcaveira, ycaveira)
+                        time.sleep(randint(1, 3))
+                        xdeposita = randint(99, 192)
+                        ydeposita = randint(742, 755)
+                        pyautogui.moveTo((xdeposita, ydeposita))
+                        time.sleep(1)
+                        pyautogui.click(xdeposita, ydeposita)
+                        time.sleep(1)
+                        xsmith = randint(600, 850)
+                        ysmith = randint(738, 752)
+                        pyautogui.moveTo(xsmith, ysmith)
+                        time.sleep(1)
+                        pyautogui.click(xsmith, ysmith)
+        elif (posicao == 4):
+            sc = pyautogui.screenshot(region=(0, 0, 1920, 1080))
+            sc.save('scream.png')
+            width, height = sc.size
+            time.sleep(randint(1, 3))
+            redp2d4, greenp2d4, bluep2d4 = sc.getpixel((1567, 692))
+            redp3d4, greenp3d4, bluep3d4 = sc.getpixel((1566, 642))
+            # print(redp2d4, greenp2d4, bluep2d4)
+            # print(redp3d4, greenp3d4, bluep3d4)
+            if (detectd4 == 0):
+                dredp2d4, dgreenp2d4, dbluep2d4 = sc.getpixel((1567, 692))
+                dredp3d4, dgreenp3d4, dbluep3d4 = sc.getpixel((1566, 642))
+                detectd4 = 1
+            if (redp2d4 != dredp2d4 and greenp2d4 != dgreenp2d4 and bluep2d4 != dbluep2d4):
+                clickp2d4x = randint(1533, 1565)
+                clickp2d4y = randint(687, 713)
+                pyautogui.moveTo(clickp2d4x, clickp2d4y)
+                time.sleep(randint(1, 8))
+                pyautogui.click(clickp2d4x, clickp2d4y)
+                detectd4 = 0
+                time.sleep(10)
+                posicao = 2
+                if (contabot == 1):
+                    sc = pyautogui.screenshot(region=(0, 0, 1920, 1080))
+                    sc.save('scream.png')
+                    width, height = sc.size
+                    time.sleep(1)
+                    redbar, greenbar, bluebar = sc.getpixel((944, 725))
+                    if (redbar == 0 and greenbar == 0 and bluebar == 1):
+                        xcaveira = randint(458, 504)
+                        ycaveira = randint(440, 472)
+                        pyautogui.moveTo(xcaveira, ycaveira)
+                        time.sleep(randint(1, 2))
+                        pyautogui.click(xcaveira, ycaveira)
+                        time.sleep(randint(1, 3))
+                        xdeposita = randint(99, 192)
+                        ydeposita = randint(742, 755)
+                        pyautogui.moveTo((xdeposita, ydeposita))
+                        time.sleep(1)
+                        pyautogui.click(xdeposita, ydeposita)
+                        time.sleep(1)
+                        xsmith = randint(600, 850)
+                        ysmith = randint(738, 752)
+                        pyautogui.moveTo(xsmith, ysmith)
+                        time.sleep(1)
+                        pyautogui.click(xsmith, ysmith)
+            elif (redp3d4 != dredp3d4 and greenp3d4 != dgreenp3d4 and bluep3d4 != dbluep3d4):
+                clickp3d4x = randint(1535, 1562)
+                clickp3d4y = randint(623, 646)
+                pyautogui.moveTo(clickp3d4x, clickp3d4y)
+                time.sleep(randint(1, 8))
+                pyautogui.click(clickp3d4x, clickp3d4y)
+                detectd4 = 0
+                time.sleep(10)
+                posicao = 3
+                if (contabot == 1):
+                    sc = pyautogui.screenshot(region=(0, 0, 1920, 1080))
+                    sc.save('scream.png')
+                    width, height = sc.size
+                    time.sleep(1)
+                    redbar, greenbar, bluebar = sc.getpixel((944, 725))
+                    if (redbar == 0 and greenbar == 0 and bluebar == 1):
+                        xcaveira = randint(458, 504)
+                        ycaveira = randint(440, 472)
+                        pyautogui.moveTo(xcaveira, ycaveira)
+                        time.sleep(randint(1, 2))
+                        pyautogui.click(xcaveira, ycaveira)
+                        time.sleep(randint(1, 3))
+                        xdeposita = randint(99, 192)
+                        ydeposita = randint(742, 755)
+                        pyautogui.moveTo((xdeposita, ydeposita))
+                        time.sleep(1)
+                        pyautogui.click(xdeposita, ydeposita)
+                        time.sleep(1)
+                        xsmith = randint(600, 850)
+                        ysmith = randint(738, 752)
+                        pyautogui.moveTo(xsmith, ysmith)
+                        time.sleep(1)
+                        pyautogui.click(xsmith, ysmith)
+    else:
+        print('lol') #tentar mudar para prinatr a data e horario e fazer um pyautogui para ligar pro celular pelo discord
